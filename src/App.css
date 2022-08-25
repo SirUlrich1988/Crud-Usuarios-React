@@ -1,0 +1,138 @@
+.avatar_item {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: blue;
+    font-size: 2.5rem;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    box-sizing: border-box;
+  }
+  body{
+    margin: 0;
+  }
+  h1, h2, h3, hr {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  ul {
+    padding-left: 0;
+    list-style: none;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .card {
+    width: 250px;
+    border-radius: 5px;
+    padding: 20px;
+    border: 1px solid #aaa9;
+    transition: transform 200ms ease;
+  }
+  .card:hover {
+    transform: scale(1.05);
+    transition: transform 200ms ease;
+  }
+  .card__item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 7px;
+    color: #aaac;
+    padding-left: 10px;
+  }
+  .card__span {
+    color: black;
+    transform: translateX(-10px);
+  }
+  .card__footer {
+    display: flex;
+    gap: 20px; 
+  }
+  .card__btn {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .card__btn:nth-child(1){
+    background-color: brown;
+    color: white;
+  }
+  .card__btn:nth-child(2){
+    background-color: goldenrod;
+    color: white;
+  }
+  input {
+    outline: none;
+  }
+  .form_none {
+    display: none;
+  }
+  .form_container {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+  }
+  .form {
+    border: 1px solid #ccca;
+    padding: 20px;
+    width: max-content;
+    border-radius: 10px;
+    background-color: white;
+    position: relative;
+  }
+  .form_exis {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    width: 20px;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 50%;
+  }
+  .form_exis:hover {
+    background-color: #0005;
+    color: white;
+  }
+  .form_btn {
+    display: block;
+    width: min-content;
+    padding: 8px 12px;
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+    background-color: darkblue;
+    color: white;
+  }
+  
+  
