@@ -3,56 +3,58 @@ import { generateAvatar } from '../helpers/generateAvatar'
 import { getRandomColor } from '../helpers/getRandomColor'
 import axios from 'axios'
 
+const CardUser = ({ user, getAllUsers, setUpdateInfo, handleOpenForm }) => {
+  const [avatar, setAvatar] = useState('')
+  const [color, setColor] = useState(getRandomColor())
 
-const CardUser = ({user, getAllUsers, setUpdateInfo, handleOpenForm}) => {
+  useEffect(() => {
+    if (user) {
+      setAvatar(generateAvatar(user.first_name, user.last_name))
+    }
+  }, [user])
 
-    const [avatar, setAvatar] = useState('')
-    const [color, setColor] = useState(getRandomColor())
-
-    useEffect(()=> {
-        if(user){
-            setAvatar(generateAvatar(user.first_name, user.last_name))
-        }
-    }, [user])
-
-    const deleteUser = ()=> {
-      const urlDelete = `https://users-crud1.herokuapp.com/users/${user.id}/`
-      axios.delete(urlDelete)
+  const deleteUser = () => {
+    const urlDelete = `https://users-crud1.herokuapp.com/users/${user.id}/`
+    axios.delete(urlDelete)
       .then(res => {
         console.log(res.data)
         getAllUsers()
       })
       .catch(err => console.log(err))
   }
-  
-    const handleUpdateClick = () => {
-      handleOpenForm()
-      setUpdateInfo(user)
+
+  const handleUpdateClick = () => {
+    handleOpenForm()
+    setUpdateInfo(user)
   }
 
   return (
-    <article className='card_users'>
-      <ul>
-        <li><span className='avatar_item' style={{backgroundColor: color}}>{avatar}</span></li>
-      </ul> 
-    <ul className='card'>
-    <h2 className='card_title'>{user.first_name} {user.last_name}</h2>
-        <ul className='card_list'>
-          <li className='card_item'>
-            Correo <span className='card_span'>{user.email}</span>
+    <article className='Card'>
+
+      <div className='Card__Avatar'>
+        <span className='avatar_item' style={{ backgroundColor: color }}>{avatar}</span>
+      </div>
+
+      <div className='Card__Body'>
+        <h2 className='Card__Name'>{user.first_name} {user.last_name}</h2>
+
+        <ul className='Card__List'>
+          <li className='Card__Item'>
+            <i className='bx bxs-envelope' /> Correo: <span className='Card__Item--span'>{user.email}</span>
           </li>
-          <li className='card_item'>
-            Contraseña <span className='card_span'>{user.password}</span>
+          <li className='Card__Item'>
+            <i className='bx bxs-lock' /> Contraseña: <span className='Card__Item--span'>{user.password}</span>
           </li>
-          <li className='card_item'>
-            Fecha de Cumpleaños <span className='card_span'>{user.birthday}</span>
+          <li className='Card__Item'>
+            <i className='bx bx-calendar' /> Fecha de Cumpleaños: <span className='Card__Item--span'>{user.birthday}</span>
           </li>
         </ul>
+
         <footer className='card_footer'>
-          <button onClick={deleteUser} className='card_btn'>Delete</button>
-          <button onClick={handleUpdateClick} className='card_btn'>Update</button>
+          <button onClick={deleteUser} className='Card__Button btn--danger'> <i className='bx bx-trash' /> Delete</button>
+          <button onClick={handleUpdateClick} className='Card__Button'><i className='bx bx-edit-alt' /> Update</button>
         </footer>
-      </ul>
+      </div>
     </article>
   )
 }

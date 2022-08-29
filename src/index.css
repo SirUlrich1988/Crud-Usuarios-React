@@ -1,1 +1,94 @@
 /* MODO RESPONSIVO */
+html {
+  background-image: url(https://wallpaper.dog/large/17134947.jpg);
+  background-size: cover;
+  color: #fff;
+  font-size: 16px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.Button {
+  display: flex;
+  justify-content: center;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.Button__Btn {
+  display: block;
+  width: max-content;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0d1118;
+  color: white;
+  cursor: pointer;
+}
+
+.Button__Btn:hover {
+  background-color: #293241;
+}
+
+.Cards__Container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+  gap: 1rem;
+  max-width: 1024px;
+  margin: 0 auto;
+  margin-top: 2rem;
+  padding: 0 20px;
+}
+
+.Card {
+  background-image: url(https://c4.wallpaperflare.com/wallpaper/544/652/880/forsaken-character-warcraft-world-of-warcraft-wallpaper-preview.jpg);
+  background-size: cover;
+  background-position: center;
+  border: 1px solid;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.Card__Name {
+  font-size: 1rem;
+  margin-bottom: .5rem;
+}
+
+.Card__List {
+  font-size: .75rem;
+  font-weight: 400;
+  color: #777;
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  margin-bottom: .5rem;
+  padding-left: 20px;
+}
+
+.Card__Item--span {
+  display: block;
+  color: #fff;
+}
+
+.Card__Button {
+  padding: 8px 12px;
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  margin-top: 10px;
+  background-color: #1254c7;
+  color: white;
+  cursor: pointer;
+}
+
+.btn--danger {
+ margin-right: 1rem;
+}
+
+.btn--danger:hover {
+  background-color: #412929;
+}
